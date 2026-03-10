@@ -12,6 +12,7 @@ A capstone project marking the completion of the TS Academy Data Science Program
 | Evaluation | ⏳ Pending |
 | Documentation | ⏳ Pending |
 | Presentation | ⏳ Pending |
+| Deployment | ⏳ Pending |
 
 ## Completed Notebooks
 - 01_Project_Overview.ipynb
