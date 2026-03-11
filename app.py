@@ -33,7 +33,7 @@ elif page == "Forecast Explorer":
   # dropdown with state options
   state = st.selectbox(
     "Select a State",
-    ["Adamawa", "Borno", Yobe]
+    ["Adamawa", "Borno", "Yobe"]
   )
 
   # dropdown with commodity options
