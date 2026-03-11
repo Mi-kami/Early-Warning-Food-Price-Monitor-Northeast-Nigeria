@@ -61,9 +61,7 @@ elif page == "Forecast Explorer":
     ]
   
     st.subheader("Model Performance Metrics")
-    st.dataframe(filtered_metrics[['model', 'MAPE', 'MAE', 'RMSE', 'H1_MAPE', 'H2_MAPE', 'H3_MAPE']])
-
-    st.subheader("Predicted Prices - 3 Months Ahead")
+    st.dataframe(filtered_metrics[['best_model', 'MAPE', 'MAE', 'RMSE', 'H1_MAPE', 'H2_MAPE', 'H3_MAPE']])
 
     if best_model_name == "Prophet":
       price_data = prophet_horizons[
@@ -83,10 +81,23 @@ elif page == "Forecast Explorer":
       st.info("Note: SARIMA does not support 3-month forecasts. Showing Prophet predictions for this combination.")
     
 
-    st.dataframe(price_data[['date', 'horizon', 'actual', 'predicted', 'error_pct']])
+    latest_date = price_data['date'].max()
 
+    recent_predictions = price_data[
+      price_data['date'] == latest_date
+    ].sort_values('horizon')
 
+    recent_predictions = recent_predictions[
+      ['horizon', 'actual', 'predicted', 'error_pct']
+    ].rename(columns={
+            'horizon'   : 'Months Ahead',
+            'actual'    : 'Actual Price (NGN)',
+            'predicted' : 'Predicted Price (NGN)',
+            'error_pct' : 'Error (%)'
+        })
 
+    st.subheader("Predicted Prices - 3 Months Ahead")
+    st.dataframe(recent_predictions)
     
     
     
