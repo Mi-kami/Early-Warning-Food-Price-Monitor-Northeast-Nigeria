@@ -43,7 +43,7 @@ elif page == "Forecast Explorer":
      "Beans (white)", "Yam", "Tomatoes"]
   )
 
-  #filters the model to get the dataset that th uer prompted
+  #filters the model to get the dataset that the user prompted
   filtered_best = best_models[
     (best_models['state'] == state) & (best_models['commodity'] == commodity) 
   ]
@@ -51,7 +51,7 @@ elif page == "Forecast Explorer":
   if len(filtered_best) == 0:
     st.warning("No results found for this combination.")
   else:
-    st.success(f"Best model for {commodity} in {state}: {filtered_best['model'}.values[0]}")
+    st.success(f"Best model for {commodity} in {state}: {filtered_best['best_model'}.values[0]}")
     best_model_name = filtered_best['model'].valeus[0]
 
     filtered_metrics = model_comparison[
