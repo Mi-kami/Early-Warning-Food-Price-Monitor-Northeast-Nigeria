@@ -9,10 +9,10 @@ A capstone project marking the completion of the TS Academy Data Science Program
 | Exploratory Data Analysis | ✅ Complete |
 | Feature Engineering | ✅ Complete |
 | Modelling | ✅ Complete |
-| Evaluation | ⏳ Pending |
+| Evaluation | ✅ Complete |
 | Documentation | ⏳ Pending |
 | Presentation | ⏳ Pending |
-| Deployment | ⏳ Pending |
+| Deployment | ✅ Complete |
 
 ## Completed Notebooks
 - 01_Project_Overview.ipynb
