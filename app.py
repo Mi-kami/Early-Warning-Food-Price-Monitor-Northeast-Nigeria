@@ -94,11 +94,7 @@ elif page == "Forecast Explorer":
     h2_row = price_data[(price_data['horizon'] == 2) & (price_data['date'] == latest_origin[2])]
     h3_row = price_data[(price_data['horizon'] == 3) & (price_data['date'] == latest_origin[3])]
     recent_predictions = pd.concat([h1_row, h2_row, h3_row]).sort_values('horizon')
-
-    recent_predictions = price_data[
-      price_data['date'] == latest_date
-    ].sort_values('horizon')
-
+  
     recent_predictions = recent_predictions[
       ['horizon', 'actual', 'predicted', 'error_pct']
     ].rename(columns={
