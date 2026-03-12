@@ -89,7 +89,11 @@ elif page == "Forecast Explorer":
       st.info("Note: SARIMA does not support 3-month forecasts. Showing Prophet predictions for this combination.")
     
 
-    latest_date = price_data['date'].max()
+    latest_origin = price_data.groupby('horizon')['date'].max()
+    h1_row = price_data[(price_data['horizon'] == 1) & (price_data['date'] == latest_origin[1])]  
+    h2_row = price_data[(price_data['horizon'] == 2) & (price_data['date'] == latest_origin[2])]
+    h3_row = price_data[(price_data['horizon'] == 3) & (price_data['date'] == latest_origin[3])]
+    recent_predictions = pd.concat([h1_row, h2_row, h3_row]).sort_values('horizon')
 
     recent_predictions = price_data[
       price_data['date'] == latest_date
