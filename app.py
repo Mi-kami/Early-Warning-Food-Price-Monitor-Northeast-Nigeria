@@ -5,11 +5,19 @@ import pandas as pd
 st.title("Early Warning Food Price Monitor - Northeast Nigeria")
 st.write("This tool forecasts retail food prices three months ahead for five key commodities across Adamawa, Borno, and Yobe — three conflict-affected states in Northeast Nigeria where food insecurity is most acute. Three months of advance warning is not just a number. It is enough time for policymakers, traders, aid organisations and food security agencies to see what is coming and act before the crisis arrives.")
 
-#reading in the needed datasets
+# reading in the needed datasets
 model_comparison = pd.read_csv('data/model_data/model_comparison_final.csv')
 best_models = pd.read_csv('data/model_data/best_model_per_combination.csv')
 prophet_horizons = pd.read_csv('data/model_data/prophet_horizon_results.csv')
 xgb_horizons = pd.read_csv('data/model_data/xgb_horizon_results.csv')
+
+# model results
+prophet_results = pd.read_csv('data/model_data/prophet_results.csv')
+xgb_results = pd.read_csv('data/model_data/xgb_results.csv')
+sarima_results = pd.read_csv('data/model_data/sarima_results.csv')
+
+# combine the 3 model results
+all_results = pd.concat([prophet_results, xgb_results, sarima_results], ignore_index=True)
 
 # creating sidebar for navigation
 page = st.sidebar.selectbox(
@@ -54,7 +62,7 @@ elif page == "Forecast Explorer":
     st.success(f"Best model for {commodity} in {state}: {filtered_best['best_model'].values[0]}")
     best_model_name = filtered_best['best_model'].values[0]
 
-    filtered_metrics = model_comparison[
+    filtered_metrics = all_results[
       (model_comparison['state'] == state) & 
       (model_comparison['commodity'] == commodity) &
       (model_comparison['best_model'] ==  best_model_name)
