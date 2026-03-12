@@ -63,9 +63,9 @@ elif page == "Forecast Explorer":
     best_model_name = filtered_best['best_model'].values[0]
 
     filtered_metrics = all_results[
-      (model_comparison['state'] == state) & 
-      (model_comparison['commodity'] == commodity) &
-      (model_comparison['best_model'] ==  best_model_name)
+      (all_results['state'] == state) & 
+      (all_results['commodity'] == commodity) &
+      (all_results['best_model'] ==  best_model_name)
     ]
   
     st.subheader("Model Performance Metrics")
