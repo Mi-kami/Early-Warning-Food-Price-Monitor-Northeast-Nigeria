@@ -166,18 +166,20 @@ TSA_DS_Capstone_Group3/
 ## 🛠️ How to Run
 
 ### Option 1 — Run in Google Colab (Recommended)
-
-1. Open the merged submission notebook in Google Colab
-2. Mount your Google Drive:
+1. Download the data folder from this repository 
+2. Upload it to your Google Drive at the following path:
+   MyDrive/price forecasting project data(cleaned)/  
+3. Open the merged notebook in Google Colab
+4. Mount your Google Drive:
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-3. Ensure the data folder exists at:
+5. Ensure the data folder exists at:
 ```
 /content/drive/MyDrive/price forecasting project data(cleaned)/
 ```
-4. Run all cells from top to bottom (`Runtime → Run all`)
+6. Run all cells from top to bottom (`Runtime → Run all`)
 
 ### Option 2 — Run Locally
 
