@@ -105,6 +105,9 @@ elif page == "Forecast Explorer":
         })
 
     st.subheader("Predicted Prices - 3 Months Ahead")
+    st.info("All predicted prices are in Nigerian Naira per kilogram "
+    "(₦/kg), consistent with WFP VAM retail price monitoring "
+    "methodology.")
     st.dataframe(recent_predictions)
     
     
