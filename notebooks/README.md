@@ -4,21 +4,25 @@ This folder contains all Jupyter/Google Colab notebooks used throughout the proj
 
 Each notebook is structured according to a specific stage of the data science workflow, including:
 
-- Project planning and overview
+- 01_Project overview
 
-- Data collection
+- 02_Data collection and cleaning
 
-- Data cleaning and preprocessing
+- 03_Data merging and feature engineering
 
-- Exploratory Data Analysis (EDA)
+- 04_Exploratory Data Analysis (EDA)
 
-- Feature engineering
+- 05_SARIMA AND SARIMAX
 
-- Model development
+- 06_XGBoost
 
-- Model optimization
+- 07_Prophet
 
-- Final evaluation
+- 08_Model comparison and evaluation
+
+- Merged notebooks #merged version from NB01 - NB08
+
+- 09_Documentation and Report ## <-- For non-technical personnels
 
 Notebooks are sequentially numbered to maintain logical progression and ensure clarity, reproducibility, and collaboration across the team.
 
