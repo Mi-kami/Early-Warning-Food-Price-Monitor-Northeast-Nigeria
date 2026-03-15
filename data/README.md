@@ -8,6 +8,8 @@ raw/ – Original datasets collected from external sources. These files remain u
 
 processed/ – Cleaned, transformed, and merged datasets prepared for analysis and modeling.
 
+model_data/ - model Results, Predictions and Comparison 
+
 Depending on the project requirements, this directory may contain:
 
 A single dataset used throughout the project, or
